@@ -1,0 +1,17 @@
+
+
+   57  kops create cluster --name=kubevprofile.proftd16.xyz --state=s3://vprofile-kops-td --zones=us-east-2a,us-east-2b --node-count=2 --node-size=t3.small --master-size=t3.small --dns-zone=kubevprofile.proftd16.xyz --node-volume-size=8 --master-volume-size=8
+   58  kops validate cluster --state=s3://vprofile-kops-td
+
+   61  mkdir kubernetes
+   62  ls
+   63  cd kubernetes
+   64  ls
+   65  git clone https://github.com/Trinetar/vprofile-kube-app.git
+   69  kops validate cluster --state=s3://vprofile-kops-td
+ 
+kubectl create -f. {inside kubernetes dir}
+----------------------------------------------------------------------------------------------------------------------------------
+kubectl delete -f .
+
+   82  kops delete cluster --name=kubevprofile.proftd16.xyz --state=s3://vprofile-kops-td --yes
